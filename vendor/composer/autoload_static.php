@@ -40,6 +40,10 @@ class ComposerStaticInit1c9b2bba7cbba5c1b655910e7fb52d86
             'phootwork\\lang\\' => 15,
             'phootwork\\collection\\' => 21,
         ),
+        'e' => 
+        array (
+            'enshrined\\svgSanitize\\' => 22,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -171,6 +175,10 @@ class ComposerStaticInit1c9b2bba7cbba5c1b655910e7fb52d86
         'phootwork\\collection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phootwork/collection',
+        ),
+        'enshrined\\svgSanitize\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enshrined/svg-sanitize/src',
         ),
         'Twig\\' => 
         array (

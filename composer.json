@@ -32,6 +32,7 @@
         "drupal/paragraphs": "^1.18",
         "drupal/pathauto": "^1.13",
         "drupal/redirect": "^1.11",
+        "drupal/svg_image": "^3.2",
         "drupal/token_or": "^2.3",
         "drupal/tracer": "^1.0",
         "drupal/twbstools": "^2.1",
