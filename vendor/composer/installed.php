@@ -478,6 +478,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/redirect' => array(
+            'pretty_version' => '1.11.0',
+            'version' => '1.11.0.0',
+            'reference' => '8.x-1.11',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/redirect',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/seven' => array(
             'pretty_version' => '1.0.0',
             'version' => '1.0.0.0',

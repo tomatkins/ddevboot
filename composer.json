@@ -27,6 +27,7 @@
         "drupal/nys_unav": "^3.0",
         "drupal/paragraphs": "^1.18",
         "drupal/pathauto": "^1.13",
+        "drupal/redirect": "^1.11",
         "drupal/tracer": "^1.0",
         "drupal/twbstools": "^2.1",
         "drupal/views_bootstrap": "^5.5@RC",
