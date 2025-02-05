@@ -1,0 +1,11 @@
+name: Contact Formatter
+type: module
+description: Field Formatter for Contact Forms
+core_version_requirement: ^8 || ^9 || ^10 || ^11
+dependencies:
+  - drupal:contact
+
+# Information added by Drupal.org packaging script on 2024-04-18
+version: '2.0.4'
+project: 'contact_formatter'
+datestamp: 1713450262
