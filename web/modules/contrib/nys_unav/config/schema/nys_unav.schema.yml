@@ -1,0 +1,22 @@
+nys_unav.settings:
+  type: mapping
+  label: 'NYS uNav'
+  mapping:
+    nys_unav:
+      type: mapping
+      mapping:
+        nys_unav_auto:
+          type: text
+          label: 'uNav automatic insertion'
+        nys_unav_search_settings:
+          type: text
+          label: 'uNav search setting'
+        nys_unav_language_access_header:
+          type: text
+          label: 'uNav language access header'
+        nys_unav_language_access_footer:
+          type: text
+          label: 'uNav language access footer'
+        nys_unav_language_access_stripwww:
+          type: text
+          label: 'uNav language access strip www toggle'

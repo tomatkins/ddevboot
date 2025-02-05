@@ -1,0 +1,11 @@
+name: 'NYS Universal Navigation'
+type: module
+description: 'Add blocks and support to display the NYS Universal Navigation'
+core_version_requirement: ^8.8 || ^9 || ^10
+package: NYS
+configure: nys_unav.form
+
+# Information added by Drupal.org packaging script on 2025-01-09
+version: '3.0.2'
+project: 'nys_unav'
+datestamp: 1736428297

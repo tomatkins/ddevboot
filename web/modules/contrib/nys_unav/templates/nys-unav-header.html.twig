@@ -1,0 +1,36 @@
+{# UNIVERSAL NAV HEADER TWIG FILE #}
+
+{# SET THE SEARCH VAR TO SHOW OR HIDE [TRUE|FALSE] #}
+
+{% if search_bar == 1 or search_bar == null %}
+    {% set hideSearch = "false" %}
+{% else %}
+    {% set hideSearch = "true" %}
+{% endif %}
+
+{# SET THE LANGUAGE HEADER VAR TO TRUE OR FALSE #}
+{% if language_access_header == 1 %}
+    {% set showLanguageHeader = "true" %}
+{% else %}
+    {% set showLanguageHeader = "false" %}
+{% endif %}
+
+{# SET THE LANGUAGE FOOTER VAR TO TRUE OR FALSE #}
+{% if language_access_footer == 1 %}
+    {% set showLanguageFooter = "true" %}
+{% else %}
+    {% set showLanguageFooter = "false" %}
+{% endif %}
+
+<div id="nygov-universal-navigation" class="nygov-universal-container" data-iframe="true" data-updated="2024-03-29 06:26">
+  <script type="text/javascript">
+    var _NY = {
+      HOST: "static-assets.ny.gov",
+      BASE_HOST: "www.ny.gov",
+      hideSettings: false,
+      hideSearch: {{ hideSearch }},
+      showLanguageHeader: {{ showLanguageHeader }},
+			showLanguageFooter: {{ showLanguageFooter }},
+    };
+  </script>
+</div>

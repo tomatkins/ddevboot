@@ -1,0 +1,98 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for the NYS Universal Navigation module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function nys_unav_theme() {
+
+  // IF THERE IS AN ADMIN ROUTE - EXIT
+  if(\Drupal::service('router.admin_context')->isAdminRoute()) {
+    return;
+  }
+
+  return [
+    'nys_unav_header' => [
+      'template' => 'nys-unav-header',
+      'variables' => [],
+    ],
+    'nys_unav_footer' => [
+      'template' => 'nys-unav-footer',
+      'variables' => [],
+    ],
+    'nys_unav_smartling' => [
+      'template' => 'nys-unav-smartling',
+      'variables' => [],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_top().
+ *
+ * Add uNav header to the page_top region
+ * automatically if Drupal variable nys_unav_auto is TRUE.
+ * But don't add uNav if on an administrative page.
+ */
+function nys_unav_page_top(&$page_top) {
+  // Skip menu if not Auto or on administrative page.
+  $config = \Drupal::config('nys_unav.settings');
+  $unav_auto = $config->get('nys_unav.nys_unav_auto');
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute();
+  if ($unav_auto == '0' || $is_admin) {
+    return;
+  }
+  elseif ($unav_auto == '1') {
+    $page_top['page_top']['nys_unav'] = [
+      '#weight' => -1000,
+      '#theme' => 'nys_unav_header',
+    ];
+  }
+}
+
+/**
+ * Implements hook_page_bottom().
+ *
+ * Add uNav footer to the page_bottom region
+ * automatically if Drupal variable nys_unav_auto is TRUE.
+ * But don't add uNav if on an administrative page.
+ */
+function nys_unav_page_bottom(&$page_bottom) {
+  // Skip menu if not Auto or on administrative page.
+  $config = \Drupal::config('nys_unav.settings');
+  $unav_auto = $config->get('nys_unav.nys_unav_auto');
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute();
+  if ($unav_auto == '0' || $is_admin) {
+    return;
+  }
+  elseif ($unav_auto == '1') {
+    $page_bottom['page_bottom']['nys_unav'] = [
+      '#weight' => 1000,
+      '#theme' => 'nys_unav_footer',
+    ];
+  }
+}
+
+/**
+ * Implements hook_preprocess().
+ *
+ * Defines template variables to be used.
+ */
+function nys_unav_preprocess(&$variables) {
+
+  // IF THERE IS AN ADMIN ROUTE - EXIT
+  if(\Drupal::service('router.admin_context')->isAdminRoute()) {
+    return;
+  }
+  
+  $unavConfig = \Drupal::config('nys_unav.settings');
+  $variables['search_bar'] = $unavConfig->get('nys_unav.nys_unav_search_settings');
+  $variables['language_access_header'] = $unavConfig->get('nys_unav.nys_unav_language_access_header');
+  $variables['language_access_footer'] = $unavConfig->get('nys_unav.nys_unav_language_access_footer');
+  $variables['language_access_stripwww'] = $unavConfig->get('nys_unav.nys_unav_language_access_stripwww');
+  $variables['#attached']['library'][] = 'nys_unav/nys-unav';
+}

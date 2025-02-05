@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Nys_unav module install file used for running update hooks.
+ */
+
+/**
+ * Implements hook_update_n().
+ */
+function nys_unav_update_9001() {
+  \Drupal::service('module_installer')
+    ->uninstall(['nys_unav']);
+  \Drupal::service('module_installer')
+    ->install(['nys_unav']);
+}
