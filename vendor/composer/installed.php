@@ -217,6 +217,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/block_class' => array(
+            'pretty_version' => '4.0.0',
+            'version' => '4.0.0.0',
+            'reference' => '4.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/block_class',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/bootstrap5' => array(
             'pretty_version' => '4.0.3',
             'version' => '4.0.3.0',
