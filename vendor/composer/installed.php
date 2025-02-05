@@ -505,6 +505,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/views_bootstrap' => array(
+            'pretty_version' => '5.5.0-rc3',
+            'version' => '5.5.0.0-RC3',
+            'reference' => '5.5.0-rc3',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/views_bootstrap',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/webprofiler' => array(
             'pretty_version' => '10.3.0',
             'version' => '10.3.0.0',
