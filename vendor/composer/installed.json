@@ -2706,6 +2706,59 @@
             "install-path": "../../web/modules/contrib/tracer"
         },
         {
+            "name": "drupal/twbstools",
+            "version": "2.1.0",
+            "version_normalized": "2.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/twbstools.git",
+                "reference": "2.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/twbstools-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "b0e01119b3eaa24b16811f28c94e905e27e2d11c"
+            },
+            "require": {
+                "drupal/core": "^10.2 || ^11.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.0",
+                    "datestamp": "1736070447",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Roudakov (vladimiraus)",
+                    "homepage": "https://www.drupal.org/u/vladimiraus",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "vladimiraus",
+                    "homepage": "https://www.drupal.org/user/673120"
+                }
+            ],
+            "description": "Companion module for [Bootstrap 5 theme] to provide better content editor and developer experience.",
+            "homepage": "https://www.drupal.org/project/twbstools",
+            "support": {
+                "source": "https://git.drupalcode.org/project/twbstools",
+                "issues": "https://www.drupal.org/project/issues/twbstools"
+            },
+            "install-path": "../../web/modules/contrib/twbstools"
+        },
+        {
             "name": "drupal/webprofiler",
             "version": "10.3.0",
             "version_normalized": "10.3.0.0",

@@ -496,6 +496,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/twbstools' => array(
+            'pretty_version' => '2.1.0',
+            'version' => '2.1.0.0',
+            'reference' => '2.1.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/twbstools',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/webprofiler' => array(
             'pretty_version' => '10.3.0',
             'version' => '10.3.0.0',

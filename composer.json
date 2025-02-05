@@ -27,6 +27,7 @@
         "drupal/paragraphs": "^1.18",
         "drupal/pathauto": "^1.13",
         "drupal/tracer": "^1.0",
+        "drupal/twbstools": "^2.1",
         "drupal/webprofiler": "^10.3",
         "drush/drush": "^13.3"
     },
