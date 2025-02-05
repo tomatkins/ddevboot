@@ -38,6 +38,7 @@
         "drupal/tracer": "^1.0",
         "drupal/twbstools": "^2.1",
         "drupal/views_bootstrap": "^5.5@RC",
+        "drupal/viewsreference": "^2.0@beta",
         "drupal/webprofiler": "^10.3",
         "drush/drush": "^13.3"
     },

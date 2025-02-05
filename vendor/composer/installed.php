@@ -604,6 +604,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/viewsreference' => array(
+            'pretty_version' => '2.0.0-beta10',
+            'version' => '2.0.0.0-beta10',
+            'reference' => '8.x-2.0-beta10',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/viewsreference',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/webprofiler' => array(
             'pretty_version' => '10.3.0',
             'version' => '10.3.0.0',
