@@ -21,6 +21,7 @@
         "drupal/core-project-message": "^10.4",
         "drupal/core-recommended": "^10.4",
         "drupal/nys_unav": "^3.0",
+        "drupal/paragraphs": "^1.18",
         "drupal/tracer": "^1.0",
         "drupal/webprofiler": "^10.3",
         "drush/drush": "^13.3"
