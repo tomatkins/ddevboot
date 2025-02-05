@@ -433,6 +433,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/editor_advanced_image' => array(
+            'pretty_version' => '3.0.0',
+            'version' => '3.0.0.0',
+            'reference' => '3.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/editor_advanced_image',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/entity_browser' => array(
             'pretty_version' => '2.12.0',
             'version' => '2.12.0.0',
