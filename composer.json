@@ -27,6 +27,7 @@
         "drupal/entity_browser": "^2.12",
         "drupal/entity_reference_revisions": "^1.12",
         "drupal/fontawesome": "^3.0",
+        "drupal/layout_builder_component_attributes": "^2.2",
         "drupal/nys_unav": "^3.0",
         "drupal/paragraphs": "^1.18",
         "drupal/pathauto": "^1.13",

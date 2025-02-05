@@ -142,6 +142,7 @@ class ComposerStaticInit1c9b2bba7cbba5c1b655910e7fb52d86
         ),
         'C' => 
         array (
+            'CssLint\\' => 8,
             'Consolidation\\SiteProcess\\' => 26,
             'Consolidation\\SiteAlias\\' => 24,
             'Consolidation\\OutputFormatters\\' => 31,
@@ -454,6 +455,10 @@ class ComposerStaticInit1c9b2bba7cbba5c1b655910e7fb52d86
         'Dflydev\\DotAccessData\\' => 
         array (
             0 => __DIR__ . '/..' . '/dflydev/dot-access-data/src',
+        ),
+        'CssLint\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/neilime/php-css-lint/src/CssLint',
         ),
         'Consolidation\\SiteProcess\\' => 
         array (
