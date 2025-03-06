@@ -6,17 +6,17 @@ nys_unav.settings:
       type: mapping
       mapping:
         nys_unav_auto:
-          type: text
+          type: int
           label: 'uNav automatic insertion'
         nys_unav_search_settings:
-          type: text
+          type: int
           label: 'uNav search setting'
         nys_unav_language_access_header:
-          type: text
+          type: int
           label: 'uNav language access header'
         nys_unav_language_access_footer:
-          type: text
+          type: int
           label: 'uNav language access footer'
         nys_unav_language_access_stripwww:
-          type: text
+          type: int
           label: 'uNav language access strip www toggle'

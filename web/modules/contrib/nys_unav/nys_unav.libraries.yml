@@ -1,13 +1,8 @@
 nys-unav:
-  css:
-    theme:
-      fonts/fontawesome/css/all.min.css: {}
-      css/nys_unav_smartling.css: {}
   js:
     //static-assets.ny.gov/sites/all/widgets/universal-navigation/js/dist/global-nav-bundle.js:
       type: external
       attributes: {aync: true}
-    js/nys_unav_smartling.js: {}
   dependencies:
     - core/jquery
     - core/once

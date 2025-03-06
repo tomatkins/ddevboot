@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ruleset name="DrupalCodingStandards">
+    <!-- To execute, run `phpcs .` from this module's folder -->
+    <rule ref="Drupal"/>
+    <rule ref="DrupalPractice"/>
+    <config name="testVersion" value="8.3"/>
+</ruleset>

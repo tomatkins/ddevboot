@@ -68,7 +68,7 @@ class EntityUsageSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container) {
+  public static function create(ContainerInterface $container): static {
     return new static(
       $container->get('config.factory'),
       $container->get('config.typed'),
@@ -89,7 +89,7 @@ class EntityUsageSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  protected function getEditableConfigNames() {
+  protected function getEditableConfigNames(): array {
     return ['entity_usage.settings'];
   }
 
@@ -102,7 +102,6 @@ class EntityUsageSettingsForm extends ConfigFormBase {
     $content_entity_types = [];
 
     // Filter the entity types.
-    /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_type_options */
     $entity_type_options = [];
     $tabs_options = [];
     foreach ($all_entity_types as $entity_type) {
@@ -114,6 +113,8 @@ class EntityUsageSettingsForm extends ConfigFormBase {
         $tabs_options[$entity_type->id()] = $entity_type->getLabel();
       }
     }
+
+    natcasesort($tabs_options);
     natcasesort($entity_type_options);
 
     // Files and users shouldn't be tracked by default.
@@ -182,6 +183,7 @@ class EntityUsageSettingsForm extends ConfigFormBase {
     foreach ($plugins as $plugin) {
       $plugin_options[$plugin['id']] = $plugin['label'];
     }
+    natcasesort($plugin_options);
     $form['track_enabled_plugins']['plugins'] = [
       '#type' => 'checkboxes',
       '#title' => $this->t('Tracking plugins'),

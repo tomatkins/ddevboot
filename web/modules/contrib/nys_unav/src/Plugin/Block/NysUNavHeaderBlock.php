@@ -19,13 +19,6 @@ class NysUNavHeaderBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
-  protected function blockAccess(AccountInterface $account) {
-    return $account->hasPermission('administer nys unav');
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function build() {
     // Return equivalent to theme function.
     $block = ['#theme' => 'nys_unav_header'];

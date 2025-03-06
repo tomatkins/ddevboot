@@ -1,0 +1,14 @@
+{
+    "name": "drupal/nys_unav",
+    "type": "drupal-module",
+    "description": "A custom module for NYS uNav functionality.",
+    "keywords": ["Drupal", "module", "navigation"],
+    "license": "GPL-2.0-or-later",
+    "require": {
+      "drupal/core": "^10"
+    },
+    "extra": {
+      "installer-name": "nys_unav"
+    }
+  }
+  

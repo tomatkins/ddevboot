@@ -14,3 +14,30 @@ function nys_unav_update_9001() {
   \Drupal::service('module_installer')
     ->install(['nys_unav']);
 }
+
+/**
+ * Switches all binary text fields to int.
+ */
+function nys_unav_update_9002() {
+  // Load the configuration for nys_unav.settings.
+  $config = \Drupal::configFactory()->getEditable('nys_unav.settings');
+  // Check if the current values are text ('1' or '0') and convert them to int.
+  $fields_to_convert = [
+    'nys_unav_auto',
+    'nys_unav_search_settings',
+    'nys_unav_language_access_header',
+    'nys_unav_language_access_footer',
+    'nys_unav_language_access_stripwww',
+  ];
+  foreach ($fields_to_convert as $field) {
+    $value = $config->get("nys_unav.$field");
+    if ($value === '1' || $value === '0') {
+      // Update the field to an integer.
+      $config->set("nys_unav.$field", (int) $value);
+    }
+  }
+  // Save the updated configuration.
+  $config->save();
+  \Drupal::messenger()->addMessage(\Drupal::translation()->translate('The nys_unav configurations have been converted from text to int.'));
+  \Drupal::messenger()->addMessage(\Drupal::translation()->translate('BE SURE TO EXPORT YOUR CONFIGURATION.'));
+}

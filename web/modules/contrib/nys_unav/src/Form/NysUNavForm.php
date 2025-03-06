@@ -43,8 +43,9 @@ class NysUNavForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     // Form constructor.
     $form = parent::buildForm($form, $form_state);
+    $form['nys_unav_unav_fieldset'] = $this->nysUnavUnavFieldset();
+    $form['nys_unav_unav_fieldset']['nys_unav_search_settings'] = $this->nysUnavSearchSettings();
     $form['nys_unav_language_access_fieldset'] = $this->nysUnavLanguageAccessFieldset();
-    $form['nys_unav_language_access_fieldset']['nys_unav_search_settings'] = $this->nysUnavSearchSettings();
     $form['nys_unav_language_access_fieldset']['nys_unav_language_access_header'] = $this->nysUnavLanguageAccessHeader();
     $form['nys_unav_language_access_fieldset']['nys_unav_language_access_footer'] = $this->nysUnavLanguageAccessFooter();
     $form['nys_unav_language_access_fieldset']['nys_unav_language_access_stripwww'] = $this->nysUnavLanguageAccessStripwww();
@@ -63,8 +64,13 @@ class NysUNavForm extends ConfigFormBase {
     $config->set('nys_unav.nys_unav_language_access_stripwww', $form_state->getValue('nys_unav_language_access_stripwww'));
     $config->save();
 
-    // CLEAR CACHE.
-    drupal_flush_all_caches();
+    // Invalidate render cache for search settings hide/show
+    \Drupal::service('cache.render')->invalidateAll();
+    // Clear Drupal caches.
+    \Drupal::cache()->invalidateAll();
+    // Regenerate router cache and other router changes because the invalidateAll command doesn't do that.
+    \Drupal::service("router.builder")->rebuild();
+    
     return parent::submitForm($form, $form_state);
   }
 
@@ -74,6 +80,38 @@ class NysUNavForm extends ConfigFormBase {
   protected function getEditableConfigNames() {
     return [
       'nys_unav.settings',
+    ];
+  }
+
+  /**
+   * NYS Universal Navigation language unav fieldset field.
+   *
+   * @return array
+   *   Form API element for field.
+   */
+  public function nysUnavUnavFieldset() {
+    return [
+      '#type' => 'fieldset',
+      '#title' => $this->t('NYS Universal Navigation Options'),
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
+    ];
+  }
+
+  /**
+   * NYS Universal Navigation Search Settings.
+   *
+   * @return array
+   *   Form API element for field.
+   */
+  public function nysUnavSearchSettings() {
+    $config = $this->configFactory->getEditable('nys_unav.settings');
+    return [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Enable Search'),
+      '#default_value' => $config->get('nys_unav.nys_unav_search_settings'),
+      '#multiple' => FALSE,
+      '#description' => $this->t('Select if the website should contain the universal navigation searchbar.'),
     ];
   }
 
@@ -108,32 +146,6 @@ class NysUNavForm extends ConfigFormBase {
       '#description' => $this->t('Select if the language access header is to be automatically inserted into the page.'),
     ];
   }
-
-  /**
-     * NYS Universal Navigation Search Settings.
-     *
-     * @return array
-     *   Form API element for field.
-     */
-    public function nysUnavSearchSettings() {
-
-      $config = $this->configFactory->getEditable('nys_unav.settings');
-
-      // IF THERE IS NO RECORD, THIS VALUE IS TRUE. OTHERWISE, GET DEFAULT VALUE
-      if($config->get('nys_unav.nys_unav_search_settings') === null) {
-        $search_truth = '0';
-      } else {
-        $search_truth = $config->get('nys_unav.nys_unav_search_settings');
-      }
-
-      return array(
-        '#type' => 'checkbox',
-        '#title' => t('Enable Search'),
-        '#default_value' => $search_truth,
-        '#multiple' => FALSE,
-        '#description' => t('Select if the website should contain the universal navigation searchbar.'),
-      );
-    }
 
   /**
    * NYS Universal Navigation language access field.

@@ -1,6 +1,6 @@
 nys_unav:
-  nys_unav_auto: '1'
-  nys_unav_search_settings: '1'
-  nys_unav_language_access_header: '0'
-  nys_unav_language_access_footer: '0'
-  nys_unav_language_access_stripwww: '1'
+  nys_unav_auto: 1
+  nys_unav_search_settings: 1
+  nys_unav_language_access_header: 1
+  nys_unav_language_access_footer: 1
+  nys_unav_language_access_stripwww: 1

@@ -4,4 +4,4 @@ nys_unav.form:
     _form: 'Drupal\nys_unav\Form\NysUNavForm'
     _title: 'NYS uNav Settings'
   requirements:
-    _permission: 'administer site configuration'
+    _permission: 'administer nys unav'
